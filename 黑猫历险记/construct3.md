@@ -4,8 +4,6 @@
 
 其玩法展示视频发布于[https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d](https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d)
 
-<vedio src="https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d"></vedio>
-
 本游戏的灵感来源是 construct 3 的入门小游戏，但是入门的平台跳跃小游戏未免过于简单（只有平台、玩家与奖励）。
 <p align = "center">
 <img src="imgs/construct3-6.png" width="40%" height="40%" />
