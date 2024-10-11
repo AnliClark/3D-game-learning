@@ -1,5 +1,27 @@
 # construct 3 黑猫历险记
-## 一、前言
+- [construct 3 黑猫历险记](#construct-3-黑猫历险记)
+  - [一、前言](#一前言)
+  - [二、游戏设计总体思路](#二游戏设计总体思路)
+  - [三、construct 3 简易入门](#三construct-3-简易入门)
+    - [对象类型](#对象类型)
+      - [精灵](#精灵)
+      - [平铺图](#平铺图)
+    - [行为](#行为)
+      - [正弦运动](#正弦运动)
+      - [补间动画](#补间动画)
+      - [旋转与环绕](#旋转与环绕)
+      - [平台与实体](#平台与实体)
+  - [四、具体设计](#四具体设计)
+    - [玩家](#玩家)
+    - [键盘](#键盘)
+    - [存档](#存档)
+    - [陷阱](#陷阱)
+    - [奖励](#奖励)
+    - [平台与背景](#平台与背景)
+    - [音频](#音频)
+  - [五、一些碎碎念](#五一些碎碎念)
+
+## 一、前言 
 本游戏是一款使用 construct 3 开发的2D平台跳跃冒险小游戏，游戏发布于[https://www.construct.net/en/free-online-games/cat-adventure-68994/play](https://www.construct.net/en/free-online-games/cat-adventure-68994/play)，可以在网页上直接点击游玩，且该网页附有本项目的源文件。
 
 其玩法展示视频发布于[https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d](https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d)
