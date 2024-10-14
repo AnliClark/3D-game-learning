@@ -24,7 +24,7 @@
 ## 一、前言 
 本游戏是一款使用 construct 3 开发的2D平台跳跃冒险小游戏，游戏发布于[https://www.construct.net/en/free-online-games/cat-adventure-68994/play](https://www.construct.net/en/free-online-games/cat-adventure-68994/play)，可以在网页上直接点击游玩，且该网页附有本项目的源文件。
 
-其玩法展示视频发布于[https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d](https://www.bilibili.com/video/BV1vEsZeVEB9/?vd_source=860e102eca6bfc0ff91656c2891e3f5d)
+其玩法展示视频发布于[https://www.bilibili.com/video/BV1vEsZeVEB9](https://www.bilibili.com/video/BV1vEsZeVEB9)
 
 本游戏的灵感来源是 construct 3 的入门小游戏，但是入门的平台跳跃小游戏未免过于简单（只有平台、玩家与奖励）。
 <p align = "center">
