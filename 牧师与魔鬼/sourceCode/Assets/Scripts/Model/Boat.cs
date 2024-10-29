@@ -58,9 +58,8 @@ public class Boat: AllObject
             seatCharacter[1] = null;
         }
     }
+    
     // 船移动
-
-
     public override bool Move(out Vector3 target1, out Vector3 target2, out Vector3 target3, out GameObject o1, out GameObject o2)
     {
         target1 = Vector3.zero;

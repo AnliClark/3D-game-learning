@@ -7,7 +7,6 @@ public class CCActionManager : SSActionManager, ISSActionCallback {
 	
 	private FirstSceneController sceneController;
 	public static bool isActionActive;  // 是否可以接收新的动作
-	public static bool over; // 游戏结束，不再接收动作
 
 	protected new void Start() {
 		sceneController = (FirstSceneController)SSDirector.getInstance ().currentSceneController;
@@ -24,7 +23,7 @@ public class CCActionManager : SSActionManager, ISSActionCallback {
 	public void MoveObject(GameObject gameobject)
 	{
         // 判断是否可移动（防止在移动过程中被重复点击）
-        if (isActionActive && !over)
+        if (isActionActive)
         {
             isActionActive = false;
 

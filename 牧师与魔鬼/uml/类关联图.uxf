@@ -1,50 +1,106 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>140</x><y>0</y><w>250</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>27</x><y>36</y><w>225</w><h>63</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
 SSDirector
 --
-+currentSceneController: ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>160</y><w>250</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Scene Controller&gt;&gt;
++currentSceneController: ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>180</y><w>225</w><h>81</h></coordinates><panel_attributes>&lt;&lt;Scene Controller&gt;&gt;
 FirstSceneController
 --
 +actionManager: CCActionManager
 +move1: GameObject
 +move2: GameObject
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>20</y><w>160</w><h>40</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
-ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>830</x><y>180</y><w>140</w><h>60</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>369</x><y>54</y><w>144</w><h>36</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>648</x><y>198</y><w>126</w><h>54</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 &lt;&lt;user interaction&gt;&gt;
-IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>10</y><w>160</w><h>70</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>45</y><w>144</w><h>63</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
 UserGUI
 --
--userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>560</y><w>480</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+-userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>45</x><y>540</y><w>432</w><h>126</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
 ISSActionCallback
 --
 
 --
-+SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>970</y><w>330</w><h>140</h></coordinates><panel_attributes>CCMoveToAction
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>909</y><w>297</w><h>126</h></coordinates><panel_attributes>CCMoveToAction
 --
 
 --
-+GetSSAction(in target, in speed, out CCMoveToAction)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>780</y><w>400</w><h>150</h></coordinates><panel_attributes>CCSequenceAction
++GetSSAction(in target, in speed, out CCMoveToAction)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>738</y><w>360</w><h>135</h></coordinates><panel_attributes>CCSequenceAction
 --
 sequence: List&lt;SSAction&gt;
 --
 +GetSSAction(in repeat, in start, in sequence, out CCSequenceAction)
-+SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>800</x><y>900</y><w>250</w><h>170</h></coordinates><panel_attributes>SSAction
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>621</x><y>846</y><w>225</w><h>153</h></coordinates><panel_attributes>SSAction
 --
 +callback: ISSActionCallback
 --
-#SSAction()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>560</y><w>530</w><h>180</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
+#SSAction()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>540</y><w>477</w><h>162</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
 SSActionManager
 --
 -actions:  Dictionary &lt;int, SSAction&gt;
 -waitingAdd: List &lt;SSAction&gt;
 -waitingDelete: List&lt;int&gt;
 --
-+RunAction(in gameobject: GameObject, in action: SSAction, in manager: ISSActionCallback)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>320</y><w>670</w><h>140</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
++RunAction(in gameobject: GameObject, in action: SSAction, in manager: ISSActionCallback)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>189</x><y>324</y><w>603</w><h>126</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
 CCActionManager
 --
 -sceneController: FirstSceneController
 -moveToA: CCMoveToAction
 --
-+SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, in strParam: string, in objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>50</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>200</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>870</x><y>450</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>450</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>1000</y><w>390</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>370;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>880</y><w>320</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>300;100;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>690</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>30</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>70</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>240</y><w>40</w><h>100</h></coordinates><panel_attributes>lt=-
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, in strParam: string, in objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>81</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>216</y><w>81</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>684</x><y>441</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>333</x><y>441</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>936</y><w>351</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>370;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>351</x><y>828</y><w>288</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>300;100;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>657</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>63</y><w>144</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>99</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>252</y><w>36</w><h>90</h></coordinates><panel_attributes>lt=-
 m1=1
-m2=*</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>690</y><w>190</w><h>260</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;170;240</additional_attributes></element><element><id>Relation</id><coordinates><x>880</x><y>730</y><w>40</w><h>190</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;170;11;10</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>646</y><w>210</w><h>30</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;190;10</additional_attributes></element></diagram>
+m2=*</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>657</y><w>171</w><h>234</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;170;240</additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>693</y><w>27</w><h>171</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;170;11;10</additional_attributes></element><element><id>Relation</id><coordinates><x>468</x><y>612</y><w>189</w><h>27</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;190;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2070</x><y>117</y><w>351</w><h>108</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+/AllObject/
+--
++id: int
++isBoat: bool
++isLeft: bool
+--
+Move(out target1: Vector3 , out target2: Vector3, out target3: Vector3, out o1: GameObject, out o2: GameObject )
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1908</x><y>180</y><w>126</w><h>72</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Character
+--
++isPriest: bool
++isInBoat: bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1746</x><y>90</y><w>306</w><h>72</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Boat
+--
++loadPerson(charc: Character , out position:Vector3 ): bool
++outPerson(charc: Character)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1854</x><y>306</y><w>477</w><h>90</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Characters
+--
++isLose(): bool
++isWin(): bool
++moveCharacter22Boat( character: Character, boat:Boat , out targetPosition: Vector3 ): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1530</x><y>207</y><w>225</w><h>81</h></coordinates><panel_attributes>&lt;&lt;Scene Controller&gt;&gt;
+FirstSceneController
+--
++actionManager: CCActionManager
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1566</x><y>135</y><w>126</w><h>54</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+&lt;&lt;user interaction&gt;&gt;
+IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1548</x><y>45</y><w>144</w><h>63</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+UserGUI
+--
+-userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1440</x><y>378</y><w>225</w><h>81</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
+CCActionManager
+--
+-sceneController: FirstSceneController
+--
++MoveObject(gameobject: GameObject )</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1395</x><y>135</y><w>144</w><h>54</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+StartGUI
+--
+-userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1800</x><y>234</y><w>81</w><h>45</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+Position
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1683</x><y>423</y><w>180</w><h>72</h></coordinates><panel_attributes>&lt;&lt;controller&gt;&gt;
+Referee
+--
+-endListener:IEndListener
++Check()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1683</x><y>351</y><w>108</w><h>36</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+IEndListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1548</x><y>279</y><w>36</w><h>117</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1620</x><y>180</y><w>27</w><h>45</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>1611</x><y>99</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1530</x><y>153</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1746</x><y>252</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1872</x><y>225</y><w>54</w><h>45</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1836</x><y>153</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1845</x><y>270</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>2025</x><y>198</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2043</x><y>144</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>30;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1962</x><y>243</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1692</x><y>279</y><w>27</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1710</x><y>378</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1395</x><y>54</y><w>135</w><h>36</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+MouseClick
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1458</x><y>81</y><w>126</w><h>72</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>120;60;10;10</additional_attributes></element></diagram>

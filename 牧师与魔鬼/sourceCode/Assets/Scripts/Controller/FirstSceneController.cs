@@ -15,9 +15,10 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 	public AudioSource audioSource;
 	public AudioClip winAudio, loseAudio, mainAudio, clickAudio;
 	private float debugTimer = 0.0f;
+    public bool over; // 游戏结束，不再接收动作
 
-	// the first scripts
-	void Awake () {
+    // the first scripts
+    void Awake () {
 		SSDirector director = SSDirector.getInstance ();
 		director.setFPS (60);
 		director.currentSceneController = this;
@@ -48,6 +49,8 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 
     public void initialize()
     {
+		over = true;
+
 		new Position();
 		new Referee();
 
@@ -68,7 +71,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		PlaySound();
 
 		// 给出引导的建议
-		CCActionManager.over = true;
 		gameObject.AddComponent<StartGUI>();
 
 		
@@ -76,7 +78,7 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 
     public void Pause ()
 	{
-        CCActionManager.over = true; // 禁止用户操作
+        over = true; // 禁止用户操作
 	}
 
 	public void Resume ()
@@ -110,7 +112,7 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		{
 			Destroy(start);
 		}
-        CCActionManager.over = false;
+        over = false;
         gameObject.AddComponent<UserGUI>();
 
 
@@ -144,6 +146,10 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
     }
 	public void MoveObject(GameObject gameobject)
 	{
+		if (over)  // 不接受新动作
+		{
+			return;
+		}
 		actionManager.MoveObject(gameobject);
 		
     }
