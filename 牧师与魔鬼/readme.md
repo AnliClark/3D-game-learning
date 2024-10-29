@@ -74,11 +74,12 @@ ways. Keep all priests alive! Good luck!</p>
 在游戏运行过程中，模型并不需要担心人物在画面上是如何移动的，它只需要在控制器调用时，更改模型内的坐标数据，并返回更新后的坐标即可，从Uml图中也可看出，模型只需与场景控制器联系即可。
 
 ### 2. 具体设计
-在模型的具体设计上，最重要的一点是在用户触发移动游戏对象后的模型更新与输赢判断，这也是模型与其他对象的主要交互。*AllObeject*类应该提供*Move()*方法，以供控制器调用。
 
-对于*Character*，需要通过*Characters*类来处理数据，这是为了确定当前的空余的点位，以及输赢的判断。*Characters*类会维护左右两岸的牧师与魔鬼的数量，位置的坐标以及位置上是否有人。当角色离开岸上时，*Characters*需将对于位置标记为空；当角色上岸时*Characters*需返回可以上岸的位置（即为空的位置）。除此之外，*Characters*有*IsLose()*与*IsWin()*方法供控制器调用，根据两岸的牧师与魔鬼的数量可以判断输赢。
+在模型的具体设计上，最重要的一点是在用户触发移动游戏对象后的模型更新与输赢判断，这也是模型与其他对象的主要交互。*AllObeject*类应该提供*Move*()方法，以供控制器调用。
 
-对于*Boat*，它需要维护船上的*Character*是谁以便判断有无空位可以上船，以及在船移动时确定有什么游戏对象要跟着移动，故而，*Boat*需要提供*loadPerson()*与*OutPerson*供*Characters*调用，还要提供*Move()*方法供控制器调用。
+对于*Character*，需要通过*Characters*类来处理数据，这是为了确定当前的空余的点位，以及输赢的判断。*Characters*类会维护左右两岸的牧师与魔鬼的数量，位置的坐标以及位置上是否有人。当角色离开岸上时，*Characters*需将对于位置标记为空；当角色上岸时*Characters*需返回可以上岸的位置（即为空的位置）。除此之外，*Characters*有*IsLose*()与*IsWin*()方法供控制器调用，根据两岸的牧师与魔鬼的数量可以判断输赢。
+
+对于*Boat*，它需要维护船上的*Character*是谁以便判断有无空位可以上船，以及在船移动时确定有什么游戏对象要跟着移动，故而，*Boat*需要提供*loadPerson*()与*OutPerson*供*Characters*调用，还要提供*Move*()方法供控制器调用。
 
 ## 五、控制器
 ### 1. 总体设计
@@ -103,14 +104,14 @@ ways. Keep all priests alive! Good luck!</p>
 <img src="imgs/readme-2.png" width="60%"/>
 </p>
 
-*GameWin()*与*GameLose()*都交由专门的裁判类*Referee*来处理。Referee类使用IEndListener接口，并把继承了*IEndListener*的FirstSceneController赋值给该接口。Referee在*Check()*时，会提供调用模型的接口来检查游戏是否结束。当游戏结束时，调用*IEndListener*的*OnEnd()*并把游戏结果作为参数传递给它。FirstSceneController已实现了*OnEnd()*方法，在接收到参数时选择性的调用*GameWin()*或*GameLose()*。
+*GameWin*()与*GameLose*()都交由专门的裁判类*Referee*来处理。Referee类使用IEndListener接口，并把继承了*IEndListener*的FirstSceneController赋值给该接口。Referee在*Check*()时，会提供调用模型的接口来检查游戏是否结束。当游戏结束时，调用*IEndListener*的*OnEnd*()并把游戏结果作为参数传递给它。FirstSceneController已实现了*OnEnd*()方法，在接收到参数时选择性的调用*GameWin*()或*GameLose*()。
 <p align = "center">
 <img src="imgs/readme-3.png" width="60%"/>
 </p>
 
-而*MoveObject()*则提供调用动作管理器的接口来实现。场景管理器会给动作管理器传递游戏对象类型的参数，以让动作管理器知道需要移动什么对象。
+而*MoveObject*()则提供调用动作管理器的接口来实现。场景管理器会给动作管理器传递游戏对象类型的参数，以让动作管理器知道需要移动什么对象。
 
-需要移动的对象由两类：船和人物。动作管理器通过他们的抽象类*AllObject*提供的*Move()*方法来获取参数。*Move()*在人物上会返回人物的目标位置，动作管理器通过该参数来控制游戏对象移动。而船的*Move*方法还需要返回船上的游戏对象及其目标位置：
+需要移动的对象由两类：船和人物。动作管理器通过他们的抽象类*AllObject*提供的*Move*()方法来获取参数。*Move*()在人物上会返回人物的目标位置，动作管理器通过该参数来控制游戏对象移动。而船的*Move*方法还需要返回船上的游戏对象及其目标位置：
 <p align = "center">
 <img src="imgs/readme-4.png" width="60%"/>
 </p>
