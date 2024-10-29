@@ -1,0 +1,94 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>242</x><y>0</y><w>250</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+SSDirector
+--
++currentSceneController: ISceneController
++running: bool
+-_instance: SSDirector
+--
++getInstance(out SSDirector)
++getFPS(out int)
++setFPS(in int)
++NextScene()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>932</x><y>20</y><w>250</w><h>180</h></coordinates><panel_attributes>&lt;&lt;Scene Controller&gt;&gt;
+FirstSceneController
+--
++actionManager: CCActionManager
++move1: GameObject
++move2: GameObject
+--
++Awake()
++LoadResources()
++Pause()
++Resume()
++GameOver()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>582</x><y>0</y><w>250</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ISceneController
+--
+
+--
++LoadResources()
++Pause()
++Resume()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>240</y><w>250</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+&lt;&lt;user interaction&gt;&gt;
+IUserAction
+--
+
+--
++GameOver()
++Restart()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>572</x><y>240</y><w>250</w><h>100</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+UserGUI
+--
+-userAction: IUserAction
+--
++Start()
++OnGUI()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>690</y><w>690</w><h>170</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
+CCActionManager
+--
+-sceneController: FirstSceneController
+-moveToA: CCMoveToAction
+-moveToB: CCMoveToAction
+-moveToC: CCMoveToAction
+-moveToD: CCMoveToAction
+--
+#Start()
+#Update()
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>460</y><w>250</w><h>140</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ISSActionCallback
+--
+
+--
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>252</x><y>890</y><w>330</w><h>140</h></coordinates><panel_attributes>CCMoveToAction
+--
++target: Vector3
++speed: float
+--
++GetSSAction(in target, in speed, out CCMoveToAction)
+Update() override
++Start() override</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>642</x><y>890</y><w>680</w><h>140</h></coordinates><panel_attributes>CCSequenceAction
+--
+sequence: List&lt;SSAction&gt;
+repeat: int
+start: int
+--
++GetSSAction(in repeat, in start, in sequence, out CCSequenceAction)
++Update() override
++Start() override
++SSActionEvent(in source: SSAction, events: SSActionEventType, intParam: int, strParam: string, objectParam: Object)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>572</x><y>460</y><w>250</w><h>170</h></coordinates><panel_attributes>SSAction
+--
++enable: bool
++destory: bool
++gameobject: GameObject
++transform: Transform
++callback: ISSActionCallback
+--
+#SSAction()
++Start()
++Update()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>882</x><y>450</y><w>250</w><h>180</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
+SSActionManager
+--
+-actions:  Dictionary &lt;int, SSAction&gt;
+-waitingAdd: List &lt;SSAction&gt;
+-waitingDelete: List&lt;int&gt;
+--
++RunAction(in gameobject: GameObject, in action: SSAction, in manager: ISSActionCallback)
+#Start()
+#Update()</panel_attributes><additional_attributes></additional_attributes></element></diagram>
