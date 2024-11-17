@@ -12,12 +12,10 @@ public class SSAction : ScriptableObject {
 
 	protected SSAction () {}
 
-	// Use this for initialization
 	public virtual void Start () {
 		throw new System.NotImplementedException ();
 	}
 	
-	// Update is called once per frame
 	public virtual void Update () {
 		throw new System.NotImplementedException ();
 	}

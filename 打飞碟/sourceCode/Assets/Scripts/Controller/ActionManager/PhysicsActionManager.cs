@@ -19,8 +19,8 @@ public class PhysicsActionManager : IActionManager
     {
 
         Rigidbody rb = disk.GetComponent<Rigidbody>();
+        rb.isKinematic = false;  // 禁用运动学模式
         rb.velocity = v;
-        rb.isKinematic = false;
         rb.AddTorque(new Vector3(0, 200f * disk.GetComponent<DiskData>().speed, 0));
     }
 }

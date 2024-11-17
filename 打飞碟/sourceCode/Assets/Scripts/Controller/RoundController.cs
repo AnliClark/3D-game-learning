@@ -25,9 +25,6 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
 	public AudioSource backgroundSource, effectSource;  
 	public AudioClip gameOverAudio, mainAudio1, mainAudio2, mainAudio3, nextRoundAudio, clickAudio, flyAudio, shootAudio, hitAudio;
 	
-	
-
-    // the first scripts
     void Awake () {
 		SSDirector director = SSDirector.getInstance ();
 		director.setFPS (60);
@@ -43,14 +40,9 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
         disk1 = Resources.Load("Prefabs/disk1") as GameObject;
         disk2 = Resources.Load("Prefabs/disk2") as GameObject;
         disk3 = Resources.Load("Prefabs/disk3") as GameObject;
-        //clouds = Resources.Load("Prefabs/Clouds") as GameObject;
-        //      winPrefabs = Resources.Load("Prefabs/winPrefabs") as GameObject;
-        //      losePrefabs = Resources.Load("Prefabs/losePrefabs") as GameObject;
 
         restart = Resources.Load("Arts/Textures/restart") as Texture;
         skin = Resources.Load("Arts/GUISkin") as GUISkin;
-        //      victory = Resources.Load("Textures/return") as Texture;
-        //      lose = Resources.Load("Textures/return") as Texture;
 
         gameOverAudio = Resources.Load("Arts/Audios/gameOver") as AudioClip;
         mainAudio1 = Resources.Load("Arts/Audios/main1") as AudioClip;
@@ -90,9 +82,6 @@ public class RoundController : MonoBehaviour, ISceneController, IUserAction{
         diskFactory.SetDiskObject(disk1, disk2, disk3);
 		// 记分员
         scoreRecorder = new ScoreRecorder();
-
-        
-
     }
 	// 各项数据初始化（重启游戏时重置数据）
     public void Initialize()

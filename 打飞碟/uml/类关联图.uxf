@@ -1,0 +1,71 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>11</x><y>0</y><w>225</w><h>63</h></coordinates><panel_attributes>&lt;&lt;Controller&gt;&gt;
+SSDirector
+--
++currentSceneController: ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>245</x><y>126</y><w>225</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Scene Controller&gt;&gt;
+RoundController
+--
++actionManager: IActionManager
+-diskFactory: DiskFactory
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>254</x><y>18</y><w>144</w><h>36</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ISceneController</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>416</x><y>27</y><w>126</w><h>54</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+&lt;&lt;user interaction&gt;&gt;
+IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>569</x><y>72</y><w>144</w><h>63</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+MainView
+--
+-userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>11</x><y>405</y><w>261</w><h>81</h></coordinates><panel_attributes>CCMoveToAction
+--
++v: Vector3
++speed: float
+--
++GetSSAction(in v, in speed, out CCMoveToAction)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>65</x><y>558</y><w>90</w><h>36</h></coordinates><panel_attributes>&lt;&lt;ScriptableObject&gt;&gt;
+SSAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>254</x><y>522</y><w>324</w><h>108</h></coordinates><panel_attributes>&lt;&lt;action manager&gt;&gt;
+SSActionManager
+--
+-actions:  Dictionary &lt;int, SSAction&gt;
+-waitingAdd: List &lt;SSAction&gt;
+-waitingDelete: List&lt;int&gt;
+--
++RunAction(in gameobject: GameObject, in action: SSAction,)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>317</x><y>396</y><w>216</w><h>99</h></coordinates><panel_attributes>&lt;&lt;adapter&gt;&gt;
+&lt;&lt;action manager&gt;&gt;
+CCActionManager
+--
+-_instance: CCActionManager
+--
++GetInstance(): CCActionManager
++PlayDisk(disk: GameObject, v: Vector3)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>45</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>416</x><y>72</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>389</x><y>486</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>477</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;11;10</additional_attributes></element><element><id>Relation</id><coordinates><x>227</x><y>27</y><w>45</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>30;10;11;10</additional_attributes></element><element><id>Relation</id><coordinates><x>515</x><y>72</y><w>72</w><h>54</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;60;40</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>207</y><w>27</w><h>99</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>146</x><y>567</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;111;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>272</x><y>288</y><w>216</w><h>63</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+&lt;&lt;action manager&gt;&gt;
+IActionManager
+--
++PlayDisk(disk: GameObject, v: Vector3)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>434</x><y>342</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>11</x><y>261</y><w>234</w><h>108</h></coordinates><panel_attributes>&lt;&lt;adapter&gt;&gt;
+&lt;&lt;action manager&gt;&gt;
+PhysicsActionManager
+--
+-_instance: PhysicsActionManager
+--
++GetInstance(): PhysicsActionManager
++PlayDisk(disk: GameObject, v: Vector3)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>236</x><y>315</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>569</x><y>0</y><w>144</w><h>54</h></coordinates><panel_attributes>&lt;&lt;user interaction&gt;&gt;
+StartGUI
+--
+-userAction: IUserAction</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>533</x><y>36</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>542</x><y>216</y><w>297</w><h>189</h></coordinates><panel_attributes>&lt;&lt;Singleton&gt;&gt;
+&lt;&lt;controller&gt;&gt;
+DiskFactory
+--
+-actionManager: IActionManager
+-ruler: Ruler
++usedDisk: List&lt;GameObject&gt;
++freeDisk: List&lt;GameObject&gt;
+-- 
++GetInstance(): DiskFactory
++SetDiskObject(GameObject, GameObject, GameObject)
++GetDisk(round): GameObject
++FreeDisk(GameObject)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>461</x><y>207</y><w>99</w><h>45</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;90;30</additional_attributes></element><element><id>Relation</id><coordinates><x>479</x><y>306</y><w>81</w><h>27</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>722</x><y>153</y><w>108</w><h>36</h></coordinates><panel_attributes>&lt;&lt;controller&gt;&gt;
+EventListener</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>180</y><w>27</w><h>54</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>866</x><y>198</y><w>189</w><h>81</h></coordinates><panel_attributes>&lt;&lt;controller&gt;&gt;
+Ruler
+--
++GetInstance(): Ruler
++SetDiskData(DiskData)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>225</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>117</y><w>189</w><h>63</h></coordinates><panel_attributes>&lt;&lt;controller&gt;&gt;
+ScoreRecorder
+--
++RecordScore(GameObject)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>135</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>938</x><y>369</y><w>90</w><h>36</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+DiskData</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>938</x><y>315</y><w>90</w><h>36</h></coordinates><panel_attributes>&lt;&lt;entity&gt;&gt;
+StaticData</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>974</x><y>270</y><w>27</w><h>63</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>387</y><w>126</w><h>27</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>263</x><y>432</y><w>72</w><h>27</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>11;10;61;10</additional_attributes></element></diagram>

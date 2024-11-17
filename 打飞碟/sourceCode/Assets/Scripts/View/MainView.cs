@@ -14,7 +14,6 @@ public class MainView : MonoBehaviour
     private GUISkin skin;
     public bool isPhysics;
     private int buttonWidth;
-    // Start is called before the first frame update
     void Start()
     {
         currentCamera = Camera.main;
@@ -24,9 +23,6 @@ public class MainView : MonoBehaviour
         skin = controller.skin;
         buttonWidth = Screen.width / 20;
         isPhysics = true;
-        //style = new GUIStyle();
-        //style.fontSize = buttonWidth / 2;
-        //style.normal.textColor = new Color(190f / 255, 74f / 255, 47f / 255);
     }
 
 

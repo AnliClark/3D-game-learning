@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 监控飞碟是否到屏幕外，回收飞碟
 public class EventListener : MonoBehaviour {
     private Vector3 position;
     private DiskFactory diskFactory;

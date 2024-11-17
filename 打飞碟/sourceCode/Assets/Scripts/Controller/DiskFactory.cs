@@ -11,7 +11,6 @@ public class DiskFactory
     private DiskData tmpDiskData;
     public static List<GameObject> usedDisk;
     public static List<GameObject> freeDisk;
-
     private static Ruler ruler;
 
     public static DiskFactory GetInstance()
@@ -69,8 +68,9 @@ public class DiskFactory
         tmpDisk.transform.localScale = new Vector3(tmpDiskData.size, tmpDiskData.size, tmpDiskData.size);
         tmpDisk.transform.position = tmpDiskData.position;
 
+        // 使飞碟运行
         actionManager.PlayDisk(tmpDisk, tmpDisk.GetComponent<DiskData>().velocity); 
-
+        // 激活飞碟
         tmpDisk.SetActive(true);
         usedDisk.Add(tmpDisk);
         return tmpDisk;

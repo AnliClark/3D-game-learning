@@ -7,7 +7,6 @@ public class SSActionManager : MonoBehaviour {
 	private Dictionary <int, SSAction> actions = new Dictionary <int, SSAction> ();
 	private List <SSAction> waitingAdd = new List<SSAction> (); 
 
-	// Update is called once per frame
 	protected void Update () {
 		foreach (SSAction ac in waitingAdd) actions [ac.GetInstanceID ()] = ac;
 		waitingAdd.Clear ();

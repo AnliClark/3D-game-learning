@@ -9,10 +9,8 @@ public class StartGUI : MonoBehaviour
     private Texture instruction;
     private Texture start;
     private GUISkin skin;
-    // Start is called before the first frame update
     void Start()
     {
-        // 将currentSceneController（FirstSceneController已实现IUserAction）显示转换为IUserAction类型
         userAction = SSDirector.getInstance().currentSceneController as IUserAction;
         skin = ((RoundController)SSDirector.getInstance().currentSceneController).skin;
         instruction = Resources.Load("Arts/Textures/instruction") as Texture;
@@ -29,6 +27,4 @@ public class StartGUI : MonoBehaviour
             userAction.StartGame();
         }
     }
-
-
 }

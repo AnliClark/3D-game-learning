@@ -11,8 +11,8 @@ public class StaticData
 
     public StaticData()
     {
-        screenRightUp = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 50));   // срио╫г
-        screenLeftDown = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 50));
+        screenRightUp = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 40));   // срио╫г
+        screenLeftDown = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 40));
         bgPosition = new Vector3(9.7f, -5.1f, 71.1f);
         bgRotation = new Vector3(0f, -79.698f, 0f);
     }

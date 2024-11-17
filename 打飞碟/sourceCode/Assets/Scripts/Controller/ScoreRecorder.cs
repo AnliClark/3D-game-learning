@@ -6,7 +6,6 @@ public class ScoreRecorder
 {
     public int score;
     
-
     public ScoreRecorder()
     {
         score = 0;
