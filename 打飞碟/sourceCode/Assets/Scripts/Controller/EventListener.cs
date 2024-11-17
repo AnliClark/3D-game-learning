@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ¼à¿Ø·ÉµúÊÇ·ñµ½ÆÁÄ»Íâ£¬»ØÊÕ·Éµú
+// ç›‘æ§é£ç¢Ÿæ˜¯å¦åˆ°å±å¹•å¤–ï¼Œå›æ”¶é£ç¢Ÿ
 public class EventListener : MonoBehaviour {
     private Vector3 position;
     private DiskFactory diskFactory;

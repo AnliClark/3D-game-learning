@@ -31,18 +31,18 @@ public class MainView : MonoBehaviour
         GUI.skin = skin;
         float width = Screen.width;
         float height = Screen.height;
-        // ÓÎÏ·Êı¾İÕ¹Ê¾
+        // æ¸¸æˆæ•°æ®å±•ç¤º
         GUI.Label(new Rect(width - buttonWidth*2, 10, buttonWidth*4, buttonWidth),
             "score:" + controller.scoreRecorder.score);
         GUI.Label(new Rect(10, 10, buttonWidth*4, buttonWidth),
             "round:" + controller.round);
-        // ÖØÆôÓÎÏ·
+        // é‡å¯æ¸¸æˆ
         if (GUI.Button(new Rect(width - 10 - buttonWidth, height - buttonWidth - 10, buttonWidth, buttonWidth), restart))
         {
             userAction.Restart();
         }
 
-        // ¸ü¸ÄÄ£Ê½
+        // æ›´æ”¹æ¨¡å¼
         if (GUI.Button(new Rect(10, height - buttonWidth - 10, buttonWidth * 3, buttonWidth), "  Physics  ", isPhysics ? skin.customStyles[0] : skin.button))
         {
             isPhysics = true;
@@ -53,31 +53,31 @@ public class MainView : MonoBehaviour
             isPhysics = false;
             userAction.ChangeMode(isPhysics);
         }
-        // ÓÎÏ·½áÊø
+        // æ¸¸æˆç»“æŸ
         if (controller.over)
         {
             GUI.Label(new Rect(width / 2 - buttonWidth * 2, height / 2 - buttonWidth * 2, buttonWidth * 10, buttonWidth * 2),
             "Game Over", skin.customStyles[1]);
         }
-        // ½ûÖ¹²Ù×÷
+        // ç¦æ­¢æ“ä½œ
         if (controller.pause)
         {
             return;
         }
-        // µÈ´ıÏÂÒ»ÂÖ
+        // ç­‰å¾…ä¸‹ä¸€è½®
         if (controller.waitForNext)
         {
             GUI.Label(new Rect(width/2 - buttonWidth*2, height/2 - buttonWidth * 2, buttonWidth * 10, buttonWidth*2),
             "Next Round", skin.customStyles[1]);
         }
-        // Êó±êµã»÷
+        // é¼ æ ‡ç‚¹å‡»
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
                 GameObject obj = hitInfo.collider.gameObject;
-                // »÷ÖĞÎïÌå
+                // å‡»ä¸­ç‰©ä½“
                 if (obj.CompareTag("shootable"))
                 {
                     userAction.Hit(obj);  

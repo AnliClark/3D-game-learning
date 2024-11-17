@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 管理飞碟生成时的数据配置
+// 绠＄悊椋炵鐢熸垚鏃剁殑鏁版嵁閰嶇疆
 public class Ruler
 {
     public int round = 0;
@@ -22,7 +22,7 @@ public class Ruler
 
     public void SetDiskData(DiskData diskData)
     {
-        // 设置飞碟数据
+        // 璁剧疆椋炵鏁版嵁
         float size = 0.5f/round+0.5f;
         float speed = round / 4.0f + 4.0f;   
         diskData.size = size + Random.Range(0, 0.1f);
@@ -44,10 +44,10 @@ public class Ruler
         }
         
 
-        // 设置飞碟初始位置与飞入的方向
+        // 璁剧疆椋炵鍒濆浣嶇疆涓庨鍏ョ殑鏂瑰悜
         Vector3 spawnPosition = new Vector3();
         Vector3 targetPosition = new Vector3();
-        // 随机从左边和右边射出
+        // 闅忔満浠庡乏杈瑰拰鍙宠竟灏勫嚭
         if (Random.Range(0, 2) == 0)
         {
             spawnPosition.x = screenLeftDown.x;

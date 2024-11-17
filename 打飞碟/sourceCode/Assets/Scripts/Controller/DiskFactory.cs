@@ -35,7 +35,7 @@ public class DiskFactory
     {
         int color = (int)Random.Range(1, 4);
         bool isHave = false;
-        // »ñÈ¡ËùĞèÒªµÄ¶ÔÏó
+        // è·å–æ‰€éœ€è¦çš„å¯¹è±¡
         foreach (GameObject disk in freeDisk)
         {
             if(disk.GetComponent<DiskData>().color == color)
@@ -49,15 +49,15 @@ public class DiskFactory
         }
         if (!isHave)
         {
-            // ´´½¨¶ÔÏóÊµÀı
+            // åˆ›å»ºå¯¹è±¡å®ä¾‹
             switch (color)
             {
                 case 1:tmpDisk = GameObject.Instantiate<GameObject>(disk1);break;
                 case 2:tmpDisk = GameObject.Instantiate<GameObject>(disk2);break;
                 case 3:tmpDisk = GameObject.Instantiate<GameObject>(disk3);break;
             }
-            // Ôö¼Ó¿Ø¼ş
-            tmpDisk.AddComponent<EventListener>();  // ¼àÌıÊÇ·ñ³ö½ç
+            // å¢åŠ æ§ä»¶
+            tmpDisk.AddComponent<EventListener>();  // ç›‘å¬æ˜¯å¦å‡ºç•Œ
             tmpDisk.AddComponent<DiskData>();
             tmpDiskData = tmpDisk.GetComponent<DiskData>();
             tmpDiskData.color = color;
@@ -68,9 +68,9 @@ public class DiskFactory
         tmpDisk.transform.localScale = new Vector3(tmpDiskData.size, tmpDiskData.size, tmpDiskData.size);
         tmpDisk.transform.position = tmpDiskData.position;
 
-        // Ê¹·ÉµúÔËĞĞ
+        // ä½¿é£ç¢Ÿè¿è¡Œ
         actionManager.PlayDisk(tmpDisk, tmpDisk.GetComponent<DiskData>().velocity); 
-        // ¼¤»î·Éµú
+        // æ¿€æ´»é£ç¢Ÿ
         tmpDisk.SetActive(true);
         usedDisk.Add(tmpDisk);
         return tmpDisk;
