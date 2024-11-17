@@ -13,9 +13,9 @@
   - [五、视图与地形](#五视图与地形)
 
 ## 一、前言
-打飞碟是一款经典的射击游戏，本游戏实况已放至Bilibili:
+打飞碟是一款经典的射击游戏，本游戏实况已放至Bilibili:[https://www.bilibili.com/video/BV14gUzYJENB](https://www.bilibili.com/video/BV14gUzYJENB)
 
-游戏源码已放至Github:
+游戏源码已放至Github:[https://github.com/AnliClark/3D-game-learning/tree/main/%E6%89%93%E9%A3%9E%E7%A2%9F/sourceCode/Assets](https://github.com/AnliClark/3D-game-learning/tree/main/%E6%89%93%E9%A3%9E%E7%A2%9F/sourceCode/Assets)
 
 游戏规则如下：
 <p align = "center">
