@@ -12,7 +12,6 @@ public class AccessPointDetect : MonoBehaviour
     {
         
         sceneController = SSDirector.getInstance().currentSceneController as FirstSceneController;
-        num = sceneController.firePointNum++;
     }
 
     void OnTriggerEnter(Collider other)

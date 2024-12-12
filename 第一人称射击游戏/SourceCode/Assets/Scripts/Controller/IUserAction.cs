@@ -15,7 +15,6 @@ public interface IUserAction
 	//void NextRound();
 	void GameOver();
 	void Restart();
-	//void ChangeMode(bool isPhysics);
 }
 
 

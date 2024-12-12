@@ -17,7 +17,7 @@ public class DynamicPreyListener : MonoBehaviour
     public Vector3 transfo;
 
     private AudioSource audioSource;
-
+    private IUserAction action;
 
     void Start()
     {
@@ -38,6 +38,8 @@ public class DynamicPreyListener : MonoBehaviour
         audioSource.clip = ((FirstSceneController)SSDirector.getInstance().currentSceneController).moveAudio;
         audioSource.loop = true;
         audioSource.Play();
+
+        action = SSDirector.getInstance().currentSceneController as IUserAction;
     }
     public void Run()
     {
@@ -52,7 +54,7 @@ public class DynamicPreyListener : MonoBehaviour
     {
         if (!hasCollide && !waitRun)    // 跑步阶段
         {
-            if (timer > 4f)
+            if (timer > 3f)
             {
                 waitRun = true;  // 进入等待阶段
                 timer = 0f;
@@ -72,6 +74,8 @@ public class DynamicPreyListener : MonoBehaviour
             animator.SetTrigger("Die");
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             hasCollide = true;
+
+            action.Hit(gameObject);
         }
     }
 }

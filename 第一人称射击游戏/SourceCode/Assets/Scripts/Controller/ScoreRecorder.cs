@@ -10,9 +10,9 @@ public class ScoreRecorder
     {
         score = 0;
     }
-    public void RecordScore(GameObject disk)
+    public void RecordScore(GameObject o)
     {
-        if(disk.TryGetComponent<PreyData>(out PreyData preyData))
+        if(o.TryGetComponent<PreyData>(out PreyData preyData))
         {
             score += preyData.score;
         }

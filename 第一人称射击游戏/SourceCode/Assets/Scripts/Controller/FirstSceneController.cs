@@ -16,7 +16,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 	public bool over;
 	public bool waitForNext;  // 等待下一轮开启
 
-	public int firePointNum;
 	private bool[] isShot;
 	public bool enableFire;
 	private float power;
@@ -103,8 +102,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		//// 记分员
 		scoreRecorder = new ScoreRecorder();
 
-
-		firePointNum = 0;
         Initialize();
     }
 	// 各项数据初始化（重启游戏时重置数据）
@@ -170,6 +167,7 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		effectSource1.PlayOneShot(accessAudio);
 		if (!isShot[order])
 		{
+			isShot[order] = true;
             arrowNum = 10;
         }
 		if (arrowNum > 0)
@@ -221,12 +219,12 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		{
 			effectSource1.PlayOneShot(holdAudio);
 		}
-		power += powerPositive? 0.01f : -0.01f;
+		power += powerPositive? 0.02f : -0.02f;
 		if(Mathf.Abs(power)<0.0002f)
 		{
 			powerPositive = true;
 		}
-		if(Mathf.Abs(power-0.65f)<0.0002f)
+		if(Mathf.Abs(power-0.66f)<0.0002f)
 		{
 			powerPositive = false;
 		}
@@ -242,8 +240,8 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 
 		power = 1f;
 		powerPositive = false;
-        
-        
+
+		arrowNum--;
     }
 	public void Hit(GameObject obj)  
 	{
@@ -267,28 +265,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		//{
 		//	return;
 		//}
-  //      timer += Time.deltaTime;
-		//// 当飞碟数小于10个时，定期生成飞碟
-  //      if (diskNum < 10 && timer> 1) { 
-		//	timer = 0.0f;
-  //          diskFactory.GetDisk(round);
-		//	diskNum++;
-		//}
-		//// 当飞碟数等于10，且存在的飞碟都已释放时，2s后开启下一轮
-		//if (diskNum == 10 && DiskFactory.usedDisk.Count == 0)  
-		//{
-  //          if (!waitForNext)
-  //          {
-  //              waitForNext = true;
-  //              effectSource.clip = nextRoundAudio;
-  //              effectSource.Play();
-		//		timer = 0.0f;
-  //          }
-  //          if (timer > 3)
-		//	{
-		//		timer = 0.0f;
-		//		NextRound();
-		//	}
-		//}
+ 
     }
 }

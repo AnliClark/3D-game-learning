@@ -20,14 +20,14 @@ public class MainView : MonoBehaviour
         userAction = SSDirector.getInstance().currentSceneController as IUserAction;
         controller = SSDirector.getInstance().currentSceneController as FirstSceneController;
         //restart = controller.restart;
-        //skin = controller.skin;
+        skin = controller.skin;
         buttonWidth = Screen.width / 20;
         
     }
 
     private void OnGUI()
     {
-        //GUI.skin = skin;
+        GUI.skin = skin;
         float width = Screen.width;
         float height = Screen.height;
         // 游戏数据展示
