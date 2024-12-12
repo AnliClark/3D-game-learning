@@ -13,7 +13,7 @@ public class MainView : MonoBehaviour
     private GUIStyle style;
     private GUISkin skin;
     private int buttonWidth;
-    private bool showInstruction;
+    public bool showInstruction;
     public Texture instruction;
 
     void Start()
@@ -38,8 +38,13 @@ public class MainView : MonoBehaviour
             "arrow:" + controller.arrowNum);
         if (showInstruction)
         {
-            GUI.DrawTexture(new Rect(width / 10, 10, width * 0.8f, width * 0.8f / 1f), instruction);
+            GUI.DrawTexture(new Rect(width / 10, 10, width * 0.8f, width * 0.8f / 3f), instruction);
         }
+        
+    }
+
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             showInstruction = !showInstruction;
