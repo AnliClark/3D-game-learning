@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ç”¨æˆ·äº¤äº’
+// ÓÃ»§½»»¥
 public class StartGUI : MonoBehaviour
 {
     private IUserAction userAction;

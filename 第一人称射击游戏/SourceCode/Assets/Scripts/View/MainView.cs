@@ -10,19 +10,20 @@ public class MainView : MonoBehaviour
     //private Camera currentCamera;
     private FirstSceneController controller;
     private IUserAction userAction;
-    private Texture restart;
     private GUIStyle style;
     private GUISkin skin;
     private int buttonWidth;
+    private bool showInstruction;
+    public Texture instruction;
 
     void Start()
     {
         userAction = SSDirector.getInstance().currentSceneController as IUserAction;
         controller = SSDirector.getInstance().currentSceneController as FirstSceneController;
-        //restart = controller.restart;
         skin = controller.skin;
         buttonWidth = Screen.width / 20;
-        
+        showInstruction = false;
+        instruction = Resources.Load("Arts/Textures/keyMouse") as Texture;
     }
 
     private void OnGUI()
@@ -30,23 +31,18 @@ public class MainView : MonoBehaviour
         GUI.skin = skin;
         float width = Screen.width;
         float height = Screen.height;
-        // 娓告垙鏁版嵁灞曠ず
+        // 游戏数据展示
         GUI.Label(new Rect(10, height - buttonWidth - 10, buttonWidth * 4, buttonWidth),
             "score:" + controller.scoreRecorder.score);
         GUI.Label(new Rect(10, 10, buttonWidth * 4, buttonWidth),
             "arrow:" + controller.arrowNum);
-
-        // 娓告垙缁撴潫
-        if (controller.over)
+        if (showInstruction)
         {
-            //GUI.Label(new Rect(width / 2 - buttonWidth * 2, height / 2 - buttonWidth * 2, buttonWidth * 10, buttonWidth * 2),
-            //"Game Over", skin.customStyles[1]);
+            GUI.DrawTexture(new Rect(width / 10, 10, width * 0.8f, width * 0.8f / 1f), instruction);
         }
-        // 绂佹鎿嶄綔
-        //if (controller.pause)
-        //{
-        //    return;
-        //}
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            showInstruction = !showInstruction;
+        }
     }
 }

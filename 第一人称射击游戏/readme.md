@@ -3,7 +3,7 @@
 ## 一、前言
 本游戏为一款射击小游戏，玩家可以在草地上使用十字弩射击靶子与小动物。
 
-本游戏实况已放至Bilibili:
+本游戏实况已放至Bilibili:[https://www.bilibili.com/video/BV1YZqeYQExR](https://www.bilibili.com/video/BV1YZqeYQExR)
 
 游戏源码已放至：[https://github.com/AnliClark/3D-game-learning/tree/main/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F/SourceCode/Assets](https://github.com/AnliClark/3D-game-learning/tree/main/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F/SourceCode/Assets)
 

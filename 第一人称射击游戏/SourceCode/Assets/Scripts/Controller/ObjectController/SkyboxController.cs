@@ -23,7 +23,6 @@ public class SkyboxController : MonoBehaviour
     {
         skyRange += skyboxTransSpeed;
         skyboxMaterial.SetFloat("_SkyRange", skyRange);
-        Debug.Log(skyRange);
         if (skyRange >= skyboxCount)
         {
             skyRange = 0f;

@@ -69,6 +69,7 @@ public class DynamicPreyListener : MonoBehaviour
         if (!hasCollide && collision.gameObject.CompareTag("Arrow"))
         {
             audioSource.PlayOneShot(((FirstSceneController)SSDirector.getInstance().currentSceneController).hitAudio);
+            rb.isKinematic = true; // 禁用物理模拟
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             animator.SetTrigger("Die");

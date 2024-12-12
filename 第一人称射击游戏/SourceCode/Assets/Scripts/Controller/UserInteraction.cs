@@ -28,23 +28,25 @@ public class UserInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Èº†Ê†áÂè≥ÈîÆ
-        if (controller.enableFire && enableRight && Input.GetMouseButtonDown(1))
+        //  Û±Í”“º¸
+        if (controller.enableFire)
         {
-            controller.Hold();
-            enableRight = false;
-            enableLeft = true;
+            if (Input.GetMouseButtonDown(1))
+            {
+                controller.Hold();
+                enableLeft = true;
+            }
+            if (Input.GetMouseButton(1))
+            {
+                controller.Fill();
+            }
+            
 
         }
-        if (Input.GetMouseButton(1))
-        {
-            controller.Fill();
-        }
-        // Èº†Ê†áÂ∑¶ÈîÆ
+        //  Û±Í◊Ûº¸
         if (controller.enableFire && enableLeft && Input.GetMouseButtonUp(0))
         {
             enableLeft = false;
-            enableRight = true;
             userAction.Shoot();
         }
 
@@ -57,8 +59,8 @@ public class UserInteraction : MonoBehaviour
             }
             else if (cameraState == 1)
             {
-                cam.cullingMask |= (1 << 8);   // Â¢ûÂä†Á¨¨ÂÖ´Â±Ç
-                cam.cullingMask &= ~(1 << 7);  // Èô§ÂéªÁ¨¨‰∏ÉÂ±Ç
+                cam.cullingMask |= (1 << 8);   // ‘ˆº”µ⁄∞À≤„
+                cam.cullingMask &= ~(1 << 7);  // ≥˝»•µ⁄∆ﬂ≤„
                 cameraTrans.position += new Vector3(0, 60, 0);
                 cameraState++;
             }
@@ -81,5 +83,6 @@ public class UserInteraction : MonoBehaviour
         {
             userAction.Restart();
         }
+        
     }
 }

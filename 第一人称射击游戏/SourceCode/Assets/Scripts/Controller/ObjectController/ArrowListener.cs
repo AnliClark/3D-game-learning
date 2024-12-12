@@ -16,10 +16,7 @@ public class ArrowListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (gameObject.GetComponent<Rigidbody>().velocity == Vector3.zero)
-        //{
-            
-        //}
+        
     }
 
     private void DestroyArrow()

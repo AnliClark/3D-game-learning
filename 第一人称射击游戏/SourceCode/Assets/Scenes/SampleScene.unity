@@ -201,8 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skyboxMaterial: {fileID: 2100000, guid: c871345586768764eb6288270038ff6e, type: 2}
-  changeInterval: 10
-  transitionDuration: 30
+  skyboxTransSpeed: 0.005
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
