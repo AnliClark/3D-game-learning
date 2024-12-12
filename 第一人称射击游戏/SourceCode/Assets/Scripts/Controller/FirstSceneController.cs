@@ -95,7 +95,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		backgroundSource.clip = mainAudio1;
 		backgroundSource.Play();
 
-		//      ruler = Ruler.GetInstance();
 		// 工厂
 		objectFactory = ObjectFactory.GetInstance();
         objectFactory.SetDiskObject(arrow);
@@ -116,9 +115,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 		// 音乐
 		backgroundSource.clip = mainAudio1;
 		backgroundSource.Play();
-
-        //pause = false;  // 运行执行操作
-        //over = false;
 
         player.transform.position = StaticData.playerPosition;
         arrowInCrossbow.SetActive(false);
@@ -247,7 +243,6 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 	{
 		// 播放音效
 		scoreRecorder.RecordScore(obj);
-		//objectFactory.FreeObject(obj);
 
 	}
 	public void Restart () {
@@ -259,12 +254,4 @@ public class FirstSceneController : MonoBehaviour, ISceneController, IUserAction
 	}
 
     #endregion
-
-	void Update () {
-		//if (pause)  // 停止更新
-		//{
-		//	return;
-		//}
- 
-    }
 }

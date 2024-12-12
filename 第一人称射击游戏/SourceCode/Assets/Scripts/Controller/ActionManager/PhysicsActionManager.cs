@@ -19,7 +19,7 @@ public class PhysicsActionManager : IActionManager
     {
 
         Rigidbody rb = obj.GetComponent<Rigidbody>();
-        //rb.isKinematic = false;  // ½ûÓÃÔË¶¯Ñ§Ä£Ê½
+        //rb.isKinematic = false;  // ç¦ç”¨è¿åŠ¨å­¦æ¨¡å¼
         rb.velocity = v;
         //rb.AddTorque(new Vector3(0, 200f * obj.GetComponent<DiskData>().speed, 0));
     }

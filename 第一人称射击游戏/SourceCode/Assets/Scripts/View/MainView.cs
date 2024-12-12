@@ -30,19 +30,19 @@ public class MainView : MonoBehaviour
         GUI.skin = skin;
         float width = Screen.width;
         float height = Screen.height;
-        // 游戏数据展示
+        // 娓告垙鏁版嵁灞曠ず
         GUI.Label(new Rect(10, height - buttonWidth - 10, buttonWidth * 4, buttonWidth),
             "score:" + controller.scoreRecorder.score);
         GUI.Label(new Rect(10, 10, buttonWidth * 4, buttonWidth),
             "arrow:" + controller.arrowNum);
 
-        // 游戏结束
+        // 娓告垙缁撴潫
         if (controller.over)
         {
             //GUI.Label(new Rect(width / 2 - buttonWidth * 2, height / 2 - buttonWidth * 2, buttonWidth * 10, buttonWidth * 2),
             //"Game Over", skin.customStyles[1]);
         }
-        // 禁止操作
+        // 绂佹鎿嶄綔
         //if (controller.pause)
         //{
         //    return;

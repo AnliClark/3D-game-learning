@@ -1,9 +1,11 @@
 # 【Unity】第一人称射击游戏
 
 ## 一、前言
-本游戏为一款射击小游戏，玩家可以在草地上使用十字弩射击靶子与小动物。本游戏实况已放至Bilibili:
+本游戏为一款射击小游戏，玩家可以在草地上使用十字弩射击靶子与小动物。
 
-游戏源码已放至：
+本游戏实况已放至Bilibili:
+
+游戏源码已放至：[https://github.com/AnliClark/3D-game-learning/tree/main/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F/SourceCode/Assets](https://github.com/AnliClark/3D-game-learning/tree/main/%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F/SourceCode/Assets)
 
 ## 二、需求分析与游戏整体设计
 无论做什么游戏，都需要先明确好需求，并确定玩家可能的交互。
@@ -32,6 +34,7 @@
 |按下左键|射击|需要先按下右键|
 |按下m键|调整小地图的视野||
 |按下r键|游戏重启||
+|按下Esc|显示键位图||
 |射中猎物|得分|||
 |玩家进入射击区域|允许射击||
 |玩家离开射击区域|禁止射击||
@@ -79,7 +82,7 @@
 由于需要实现半拉弓状态，所以需要使用动画层级以实现半拉弓。通过控制动画层级的权重来控制弦的状态。实现的效果如图：
 
 <p align = "center">
-<img src="imgs/readme-4.png" width="70%"/>
+<img src="imgs/readme-4.gif" width="70%"/>
 </p>
 
 ## 五、摄像机渲染
